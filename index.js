@@ -14,7 +14,7 @@ function getDogImage(numDoggos) {
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
-        //$('.pictures').empty();
+        $('.pictures').empty();
         let numToGrab = 3
         if($('#num-dogs').val()){
         numToGrab = $('#num-dogs').val();
@@ -36,12 +36,12 @@ function displayDoggos(responseJson) {
 
 function makeDoggo(src) {
     console.log(src);
-    /*let newDoggo = `<li>
+    let newDoggo = `<li>
     <img class='result-doggo' src=${src}
     alt='Another happy doggo'>
-    </li>'`
+    </li>`
     $('.pictures').append(newDoggo);
-    console.log(newDoggo);*/
+    console.log(newDoggo);
 }
 
 $(function() {

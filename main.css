@@ -32,3 +32,18 @@ button {
     color: black;
     width: 60px;
 }
+
+.pictures {
+    width: 400px;
+    text-align: left;;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
