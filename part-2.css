@@ -19,6 +19,7 @@ form {
     display: flex;
     flex-direction: row;
     padding: 10px;
+    flex-shrink: 2;
 }
 
 input, button {
@@ -33,22 +34,3 @@ button {
     width: 60px;
 }
 
-.pictures {
-    width: 400px;
-    text-align: left;
-}
-
-ul {
-    list-style: none;
-
-    display: flex;
-    
-}
-
-li {
-    list-style: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 400px;
-    
-}
