@@ -1,7 +1,6 @@
 'use strict';
 
 function getDogImage(numDoggos) {
-    console.log(numDoggos);
     let link = 'https://dog.ceo/api/breeds/image/random/'
     link += numDoggos;
     fetch(link, {'Access-Control-Allow-Credentials': true})
@@ -15,7 +14,7 @@ function getDogImage(numDoggos) {
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
-        $('.pictures').empty();
+        //$('.pictures').empty();
         let numToGrab = 3
         if($('#num-dogs').val()){
         numToGrab = $('#num-dogs').val();
@@ -37,12 +36,12 @@ function displayDoggos(responseJson) {
 
 function makeDoggo(src) {
     console.log(src);
-    let newDoggo = `<li>
+    /*let newDoggo = `<li>
     <img class='result-doggo' src=${src}
     alt='Another happy doggo'>
     </li>'`
     $('.pictures').append(newDoggo);
-    console.log(newDoggo);
+    console.log(newDoggo);*/
 }
 
 $(function() {
