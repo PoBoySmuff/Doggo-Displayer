@@ -1,23 +1,42 @@
 'use strict';
 
+
+function handleErrors(response) {
+    if (response.status === 404) {
+        throw Error('Doggo not found for that breed :(');
+        console.log("hi");
+    }
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    
+}
+
 function getImage(link) {
     console.log(link);
     fetch(link, { 'Access-Control-Allow-Origin': true })
-        .then(response => response.json())
-        .then(responseJson =>
-            createDoggo(responseJson))
+        .then(handleErrors)
+        .then((response) => response.json())
 
-       // .catch(error => alert('no doggo pictures :( something went wrong'));
+        .then(responseJson => {
+            createDoggo(responseJson);
+            console.log('Success:', responseJson);
+        })
+        .catch(function(error) {
+            alert(error)
+        })
+
 }
-
+//.catch(error => alert(response.message));
 function checkForm() {
     $('form').submit(event => {
         event.preventDefault();
         $('.doggo').empty();
         let dogType = $('#dog-type').val();
         if (!dogType) {
-            dogType='beagle';
+            dogType = 'beagle';
         }
+        dogType = dogType.toLowerCase();
         $('#dog-type').val('');
         let link = createLink(dogType);
         getImage(link);

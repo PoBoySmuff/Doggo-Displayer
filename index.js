@@ -36,12 +36,12 @@ function displayDoggos(responseJson) {
 
 function makeDoggo(src) {
     console.log(src);
-    /*let newDoggo = `<li>
+    let newDoggo = `<li>
     <img class='result-doggo' src=${src}
     alt='Another happy doggo'>
     </li>`;
     $('.pictures').append(newDoggo);
-    console.log(newDoggo);*/
+    console.log(newDoggo);
 
     //uncomment for full functionality
 
