@@ -19,8 +19,13 @@ function watchForm() {
         if($('#num-dogs').val()){
         numToGrab = $('#num-dogs').val();
     }
-        
+    if ((numToGrab > 0) && (numToGrab <= 50)) {
         getDogImage(numToGrab);
+    }
+    else {
+        alert('Number must be between 1 and 50');
+    }
+        
     });
 }
 

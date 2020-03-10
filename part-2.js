@@ -2,27 +2,29 @@
 
 
 function handleErrors(response) {
-    if (response.status === 404) {
-        throw Error('Doggo not found for that breed :(');
-        console.log("hi");
-    }
+    //console.log(response);
     if (!response.ok) {
-        throw Error(response.statusText);
+        
+        throw Error('Dog breed not found');
+
     }
-    
+    return response;
+
 }
 
 function getImage(link) {
     console.log(link);
     fetch(link, { 'Access-Control-Allow-Origin': true })
         .then(handleErrors)
-        .then((response) => response.json())
+        .then(response => response.json())
+
 
         .then(responseJson => {
             createDoggo(responseJson);
             console.log('Success:', responseJson);
         })
-        .catch(function(error) {
+        .catch(function (error) {
+            console.log(error);
             alert(error)
         })
 
